@@ -1,6 +1,6 @@
 body {
   color: black;
-  font-family: "Times New Roman", Times, serif;
+  font-family: "Times New Roman", Times, serif !important; 
 }
 #cuerpo {
   width: 100%;
@@ -17,7 +17,7 @@ nav {
   animation-duration: 3s;
   animation-name: slidein;
 }
-
+/*Animación del título*/
 @keyframes slidein {
   from {
     margin-left: 100%;
@@ -37,7 +37,6 @@ input:focus {
    width: 300px;
    height: 40px;
    font-size: 24px;
-
 }
 nav {
   background-image: linear-gradient(to right, gainsboro, gray, black);
@@ -47,21 +46,34 @@ section {
 }
 header,
 aside,
-footer,
 nav {
   background-color: gray;
+}
+footer {
+  background-color: black;
 }
 h1,
 nav ul li {
   display: inline;
 }
+/*Quita las viñetas*/
 ul {
   list-style-type: none;
 }
+/*Elimina el underline de los enlaces*/
 a {
   text-decoration: none;
+}
+a:hover {
+  color:azure;
+}
+aside ul li a, #listaNav_h li a {
   color: darkslategray;
 }
+footer ul li a {
+  color:darkgrey !important;
+}
+
 .redes {
   font-size: large;
   font-weight: bold;
@@ -105,15 +117,24 @@ nav ul a {
 nav ul {
   margin-left: -20px;
 }
-section h2,
-article {
-  background-color: lightgray;
+section h2 {
   border-bottom: 15px;
   text-align: center;
+}
+article {
+  border-bottom: 15px;
+  text-align:justify;
+}
+iframe {
+  display: block;
+  margin: 0px auto;
 }
 article img {
   width: 500px;
   height: 500px;
+  /*Centra la imagen*/
+  display: block;
+  margin: 0px auto;
 }
 section {
   padding: 20px;
@@ -144,8 +165,8 @@ section {
   #cuerpo {
     grid-template-columns: auto;
     grid-template-rows: 18% auto auto 10%;
-    grid-column-gap: 10px;
-    grid-row-gap: 10px;
+    /*grid-column-gap: 10px;
+    grid-row-gap: 10px;*/
     grid-template-areas:
       "head"
       "nav"
@@ -153,7 +174,7 @@ section {
       "foot";
   }
   aside,
-  #buscaHeader {
+  #buscaHeader, #listaNav_h {
     display: none;
   }
   nav {
@@ -171,8 +192,8 @@ section {
   #cuerpo {
     grid-template-columns: auto auto auto;
     grid-template-rows: 20% 5% auto 15%;
-    grid-column-gap: 10px;
-    grid-row-gap: 10px;
+    /*grid-column-gap: 10px;
+    grid-row-gap: 10px;*/
     grid-template-areas:
       "head head head"
       "nav nav nav"
@@ -184,7 +205,7 @@ section {
     display: none;
   }
   aside,
-  #buscaHeader {
+  #buscaHeader, #listaNav_h {
     display: block;
   }
 }
